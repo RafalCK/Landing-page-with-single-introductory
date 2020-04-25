@@ -23,14 +23,14 @@ $poppins: "Poppins", sans-serif;
 .wrapper {
   background-color: $violet;
   min-height: 100vh;
-  background-image: url(/assets/img/bg-desktop.svg);
+  background-image: url(assets/img/bg-desktop.svg);
   background-repeat: no-repeat;
   background-position: left center;
   background-size: auto 100%;
   font-family: $open-sans;
   font-weight: 400;
   @include mobile {
-    background-image: url(/assets/img/bg-mobile.svg);
+    background-image: url(assets/img/bg-mobile.svg);
     background-position: top center;
     background-size: 100%;
   }
