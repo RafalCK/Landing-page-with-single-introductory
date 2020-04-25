@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap");
+$violet: hsl(257, 40%, 49%);
+$open-sans: "Open Sans", sans-serif;
+$poppins: "Poppins", sans-serif;
+
+@mixin mobile {
+  @media only screen and (min-width: 375px) and (max-width: 667px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1650px) and (max-width: 2600px) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  background-color: $violet;
+  min-height: 100vh;
+  background-image: url(/assets/img/bg-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: auto 100%;
+  font-family: $open-sans;
+  font-weight: 400;
+  @include mobile {
+    background-image: url(/assets/img/bg-mobile.svg);
+    background-position: top center;
+    background-size: 100%;
+  }
+}
+
+.header__logo {
+  padding-top: 3.125rem;
+  margin-left: 5.313rem;
+  @include mobile {
+    margin-left: 2rem;
+    padding-top: 2rem;
+  }
+  img {
+    width: 15%;
+    @include mobile {
+      width: 38%;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.main__image {
+  margin-top: 5.625rem;
+  margin-left: 5.313rem;
+  width: 48%;
+  @include mobile {
+    width: 81%;
+    margin-top: 3.25rem;
+    margin-left: 0.2rem;
+  }
+  @include desktop {
+    width: 43%;
+    margin-top: 6.5rem;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.main__article {
+  width: 32%;
+  color: white;
+  padding-left: 3.125rem;
+  padding-bottom: 3.25rem;
+  @include mobile {
+    width: 100%;
+    margin-top: 3rem;
+    padding-left: 0rem;
+    padding-bottom: 0rem;
+  }
+  @include desktop {
+    width: 24%;
+  }
+  h1 {
+    font-family: $poppins;
+    text-transform: capitalize;
+    font-size: 2.5em;
+    font-weight: 400;
+    @include mobile {
+      font-size: 1.4em;
+      text-align: center;
+      margin: 0.3rem 2.6rem 0 2.6rem;
+    }
+  }
+  p {
+    font-family: $open-sans;
+    font-weight: 400;
+    margin-top: 1.25rem;
+    line-height: 1.5;
+    @include mobile {
+      margin-top: 1rem;
+      font-size: 0.95em;
+      text-align: center;
+      margin: 1rem 2.7rem 0 2.7rem;
+    }
+  }
+  button {
+    background-color: white;
+    color: $violet;
+    margin-top: 1.25rem;
+    padding: 0.75rem 3.125rem 0.75rem 3.125rem;
+    border-radius: 2.8rem;
+    border: 0.0625rem solid black;
+    box-shadow: 0.1rem 0.4rem 0.4rem hsla(0, 0%, 0%, 0.4);
+    font-family: $poppins;
+    font-weight: 400;
+    font-size: 1em;
+    @include mobile {
+      margin: 1.7rem auto 0 auto;
+      padding: 0.7rem 4.85rem 0.7rem 4.85rem;
+      font-size: 0.75em;
+      display: block;
+    }
+    &:hover {
+      background-color: $violet;
+      color: white;
+      border: 0.0625rem solid white;
+      box-shadow: 0.1rem 0.4rem 0.4rem hsla(0, 0%, 100%, 0.4);
+    }
+  }
+}
+
+.footer {
+  margin-top: 1.2rem;
+  display: flex;
+  @include mobile {
+    flex-direction: column-reverse;
+  }
+  &__info {
+    justify-content: flex-end;
+    margin-right: 4.375rem;
+    align-items: center;
+    flex: 2 0 0;
+    font-family: $open-sans;
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    @include mobile {
+      justify-content: center;
+      margin-top: 1rem;
+      margin-right: 0rem;
+      font-size: 0.7em;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+  }
+  &__social {
+    display: flex;
+    flex: 1 0 0;
+    justify-content: flex-end;
+    margin-right: 2.5rem;
+    @include mobile {
+      justify-content: center;
+      margin-right: 0rem;
+      margin-top: 2.6rem;
+    }
+  }
+  a.footer__logo {
+    color: white;
+    font-size: 1.25em;
+    margin-right: 0.625rem;
+    border-radius: 50%;
+    border: 0.0625rem solid white;
+    text-decoration: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mobile {
+      font-size: 0.8em;
+      width: 1.563rem;
+      height: 1.563rem;
+    }
+    &:hover {
+      background-color: white;
+      color: $violet;
+      border: 0.0625rem solid white;
+      box-shadow: 0.1rem 0.4rem 0.4rem hsla(0, 0%, 100%, 0.4);
+    }
+  }
+}
