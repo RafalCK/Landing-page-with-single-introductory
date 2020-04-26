@@ -193,6 +193,9 @@ $poppins: "Poppins", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    span {
+      display: none;
+    }
     @include mobile {
       font-size: 0.8em;
       width: 1.563rem;

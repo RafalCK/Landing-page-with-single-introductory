@@ -276,6 +276,10 @@
           align-items: center;
 }
 
+.footer a.footer__logo span {
+  display: none;
+}
+
 @media only screen and (min-width: 375px) and (max-width: 667px) {
   .footer a.footer__logo {
     font-size: 0.8em;
